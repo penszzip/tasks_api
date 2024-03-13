@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Tasks_Api.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,21 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Configure DB connection
+var connection = String.Empty;
+if (builder.Environment.IsDevelopment())
+{
+    builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Development.json");
+    connection = builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING");
+}
+else
+{
+    connection = Environment.GetEnvironmentVariable("AZURE_SQL_CONNECTIONSTRING");
+}
+
+builder.Services.AddDbContext<TaskDbContext>(options => options.UseSqlServer(connection));
+
 
 var app = builder.Build();
 
