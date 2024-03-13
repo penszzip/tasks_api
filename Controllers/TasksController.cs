@@ -59,4 +59,20 @@ public class TasksController : ControllerBase
             return NotFound();
         }
     }
+
+    [HttpDelete("{id}")]
+    public IActionResult Delete(int id)
+    {
+        var task = _service.GetById(id);
+
+        if (task is not null)
+        {
+            _service.DeleteById(id);
+            return Ok();
+        }
+        else
+        {
+            return NotFound();
+        }
+    }
 }

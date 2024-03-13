@@ -48,4 +48,15 @@ public class TasksService
 
         _context.SaveChanges();
     }
+
+    public void DeleteById(int id)
+    {
+        var taskToDelete = _context.Tasks.Find(id);
+
+        if (taskToDelete is not null)
+        {
+            _context.Tasks.Remove(taskToDelete);
+            _context.SaveChanges();
+        }
+    }
 }
