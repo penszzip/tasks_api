@@ -43,4 +43,20 @@ public class TasksController : ControllerBase
         var taskCreated = _service.Create(newTask);
         return CreatedAtAction(nameof(GetById), new { id = taskCreated!.Id }, taskCreated);
     }
+
+    [HttpPut("{id}")]
+    public IActionResult Update(int id, TaskEntity task)
+    {
+        var taskToUpdate = _service.GetById(id);
+
+        if(taskToUpdate is not null)
+        {
+            _service.Update(id, task);
+            return NoContent();    
+        }
+        else
+        {
+            return NotFound();
+        }
+    }
 }

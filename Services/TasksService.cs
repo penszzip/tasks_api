@@ -33,4 +33,19 @@ public class TasksService
 
         return newTask;
     }
+
+    public void Update(int id, TaskEntity task)
+    {
+        var taskToUpdate = _context.Tasks.Find(id);
+        if (taskToUpdate is null)
+        {
+            throw new InvalidOperationException("Task does not exist");
+        }
+        
+        taskToUpdate.Name = task.Name;
+        taskToUpdate.IsUrgent = task.IsUrgent;
+        taskToUpdate.Due = task.Due;
+
+        _context.SaveChanges();
+    }
 }

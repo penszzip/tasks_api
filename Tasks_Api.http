@@ -33,3 +33,12 @@ Content-Type: application/json
 }
 
 ###
+
+PUT {{Tasks_Api_HostAddress}}/tasks/2
+Content-Type: application/json
+
+{   
+    "name": "do the laundry",
+    "isUrgent": true,
+    "due": "2024-05-12T00:00:00"
+} 
