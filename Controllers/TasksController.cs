@@ -36,4 +36,11 @@ public class TasksController : ControllerBase
             return NotFound();
         }
     }
+
+    [HttpPost]
+    public IActionResult Create(TaskEntity newTask)
+    {
+        var taskCreated = _service.Create(newTask);
+        return CreatedAtAction(nameof(GetById), new { id = taskCreated!.Id }, taskCreated);
+    }
 }

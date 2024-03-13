@@ -25,4 +25,12 @@ public class TasksService
         return _context.Tasks
             .SingleOrDefault(p => p.Id == id);
     }
+
+    public TaskEntity? Create(TaskEntity newTask)
+    {
+        _context.Tasks.Add(newTask);
+        _context.SaveChanges();
+
+        return newTask;
+    }
 }

@@ -5,12 +5,21 @@ Accept: application/json
 
 ###
 
-GET {{Tasks_Api_HostAddress}}/tasks
+GET {{Tasks_Api_HostAddress}}/tasks/
 Accept: application/json
 
 ###
 
 GET {{Tasks_Api_HostAddress}}/tasks/1
 Accept: application/json
+
+###
+
+POST {{Tasks_Api_HostAddress}}/tasks/
+Content-Type: application/json
+
+{
+    "name": "walk the dog"
+}
 
 ###
