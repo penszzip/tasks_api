@@ -23,3 +23,13 @@ Content-Type: application/json
 }
 
 ###
+
+POST {{Tasks_Api_HostAddress}}/tasks/
+Content-Type: application/json
+
+{
+    "name": "buy groceries",
+    "isUrgent": true
+}
+
+###

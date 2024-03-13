@@ -7,5 +7,6 @@ public class TaskEntity
     [Required]
     [MaxLength(100)]
     public string? Name { get; set; }
+    public bool IsUrgent { get; set; }
     public DateTime Due { get; set; }
 }
