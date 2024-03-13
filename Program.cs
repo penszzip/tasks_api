@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Tasks_Api.Data;
+using Tasks_Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<TasksService>();
 
 // Configure DB connection
 var connection = String.Empty;
