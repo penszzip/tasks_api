@@ -4,3 +4,13 @@ GET {{Tasks_Api_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+GET {{Tasks_Api_HostAddress}}/tasks
+Accept: application/json
+
+###
+
+GET {{Tasks_Api_HostAddress}}/tasks/1
+Accept: application/json
+
+###

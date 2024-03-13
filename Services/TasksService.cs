@@ -19,4 +19,10 @@ public class TasksService
         return _context.Tasks
             .ToList();
     }
+
+    public TaskEntity? GetById(int id)
+    {
+        return _context.Tasks
+            .SingleOrDefault(p => p.Id == id);
+    }
 }

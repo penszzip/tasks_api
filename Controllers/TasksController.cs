@@ -1,6 +1,7 @@
 using Tasks_Api.Services;
 using Tasks_Api.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Tasks_Api.Controllers;
 
@@ -19,5 +20,20 @@ public class TasksController : ControllerBase
     public IEnumerable<TaskEntity> GetAll()
     {
         return _service.GetAll();
+    }
+
+    [HttpGet("{id}")]
+    public ActionResult<TaskEntity> GetById(int id)
+    {
+        var task = _service.GetById(id);
+
+        if (task is not null)
+        {
+            return task;
+        }
+        else
+        {
+            return NotFound();
+        }
     }
 }
