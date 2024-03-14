@@ -17,15 +17,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 2. Navigate into the cloned repository
 
-cd yourrepository
+ - `cd yourrepository`
 
 3. Restore the .NET packages
 
-dotnet restore
+-  `dotnet restore`
 
 4. Run the application
 
-dotnet run
+-  `dotnet run`
 
 
 ## API Endpoints
