@@ -8,6 +8,8 @@ The API was deployed at Azure cloud app services and is available at:
 
 https://tasksapi20240314215627.azurewebsites.net followed by the route to the endpoint
 
+(The database is deployed using the free tier plan so it pauses when inactive)
+
 ## API Endpoints
 
 - `GET /tasks`: Get all tasks
