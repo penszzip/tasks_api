@@ -28,8 +28,9 @@ POST {{Tasks_Api_HostAddress}}/tasks/
 Content-Type: application/json
 
 {
-    "name": "buy groceries",
-    "isUrgent": true
+    "name": "grind leetcode",
+    "isUrgent": true,
+    "due": "2024-12-12T22:00:00"
 }
 
 ###
@@ -45,5 +46,5 @@ Content-Type: application/json
 
 ###
 
-DELETE {{Tasks_Api_HostAddress}}/tasks/1
+DELETE {{Tasks_Api_HostAddress}}/tasks/4
 Accept: application/json
