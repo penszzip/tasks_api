@@ -2,7 +2,21 @@
 
 This project is a RESTful API for managing tasks. It allows you to create, read, update, and delete tasks.
 
-## Getting Started
+## Deployment
+
+The API was deployed at Azure cloud app services and is available at:
+
+https://tasksapi20240314215627.azurewebsites.net followed by the route to the endpoint
+
+## API Endpoints
+
+- `GET /tasks`: Get all tasks
+- `GET /tasks/{id}`: Get a task by ID
+- `POST /tasks`: Create a new task
+- `PUT /tasks/{id}`: Update a task
+- `DELETE /tasks/{id}`: Delete a task
+
+## Run Locally
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
@@ -26,19 +40,3 @@ These instructions will get you a copy of the project up and running on your loc
 4. Run the application
 
 -  `dotnet run`
-
-
-## API Endpoints
-
-- `GET /api/tasks`: Get all tasks
-- `GET /api/tasks/{id}`: Get a task by ID
-- `POST /api/tasks`: Create a new task
-- `PUT /api/tasks/{id}`: Update a task
-- `DELETE /api/tasks/{id}`: Delete a task
-
-## Running the tests
-
-You can run the unit tests for this project by using the following command:
-
-
-dotnet test
